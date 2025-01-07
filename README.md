@@ -10,6 +10,6 @@
 ![Screenshot 2025-01-08 021150](https://github.com/user-attachments/assets/593971ef-f70f-42dc-b5e3-5ed212ac68e7)
 ![image](https://github.com/user-attachments/assets/c71f1dee-ff9d-454f-8b00-781d6c4ed7a5)
 
-## Compatibility
-
-Windows ![400916807-e5ba7077-9991-4420-889b-6bf8f6523c8c1](https://github.com/user-attachments/assets/864412f6-883b-441a-8b53-8a8a4533aa43)
+## Technologies used
+![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white) ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB) ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
+- ShadCN UI
