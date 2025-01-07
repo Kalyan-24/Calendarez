@@ -9,3 +9,7 @@
 ## Images
 ![Screenshot 2025-01-08 021150](https://github.com/user-attachments/assets/593971ef-f70f-42dc-b5e3-5ed212ac68e7)
 ![image](https://github.com/user-attachments/assets/c71f1dee-ff9d-454f-8b00-781d6c4ed7a5)
+
+## Compatibility
+
+Windows ![image](https://github.com/user-attachments/assets/e5ba7077-9991-4420-889b-6bf8f6523c8c)
