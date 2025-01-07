@@ -1,7 +1,10 @@
 # Calendarez
 
+## About
+Calendarez is a web application that is very feature-rich. It is a simple, fast, easy Calendar. Ever forget about any event? Use Calendarez and never look back.
+
 ## Features
-- Calendarez is a web app which allows Users to create, edit, delete Events, Tasks and Birthdays.
+- Calendarez allows Users to create, edit, delete Events, Tasks and Birthdays.
 - Calendarez allows to invites others to Events and Birthdays.
 - Users can view the calendar in multiple formats which include Date, Week, Month and Year.
 - Calendarez sends the remainder emails for the host.
@@ -19,3 +22,6 @@
 
 ## Technologies used
 ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white) ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB) ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white) ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white) ![Radix UI](https://img.shields.io/badge/radix%20ui-161618.svg?style=for-the-badge&logo=radix-ui&logoColor=white)
+
+## License
+Copyright © 2025 Calendarez. All rights reserved.
