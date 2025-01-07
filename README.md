@@ -12,4 +12,4 @@
 
 ## Compatibility
 
-Windows ![image](https://github.com/user-attachments/assets/e5ba7077-9991-4420-889b-6bf8f6523c8c)
+Windows ![400916807-e5ba7077-9991-4420-889b-6bf8f6523c8c1](https://github.com/user-attachments/assets/864412f6-883b-441a-8b53-8a8a4533aa43)
