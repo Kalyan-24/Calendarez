@@ -15,21 +15,6 @@ const transporter = nodemailer.createTransport({
 });
 
 const sendEmail = async (to, subject, message) => {
-
-    try {
-        await new Promise((resolve, reject) => {
-            transporter.verify(function (error, success) {
-                if (error) {
-                    reject(error);
-                } else {
-                    resolve(success);
-                }
-            });
-        });
-    } catch (error) {
-
-    }
-
     const mailOptions = {
         from: {
             name: 'Services - Calendarez',
@@ -40,24 +25,13 @@ const sendEmail = async (to, subject, message) => {
         html: message,
     };
 
-    try {
-        await new Promise((resolve, reject) => {
-            transporter.sendMail(mailOptions, (err, info) => {
-                if (err) {
-                    reject(err);
-                } else {
-                    resolve(info);
-                }
-            });
-        });
-    } catch (error) {
-    }
+    await transporter.sendMail(mailOptions);
 };
 
 const scheduleEmail = (id, date, to, subject, message) => {
     try {
-        schedule.scheduleJob(id, date, () => {
-            sendEmail(to, subject, message)
+        schedule.scheduleJob(id, date, async () => {
+            await sendEmail(to, subject, message)
         })
     } catch (error) {
     }
@@ -65,7 +39,7 @@ const scheduleEmail = (id, date, to, subject, message) => {
 
 const rescheduleEmail = (id, date, to, subject, message) => {
     try {
-        schedule.rescheduleJob(id, date, () => {
+        schedule.rescheduleJob(id, date, async () => {
             sendEmail(to, subject, message);
         });
     }
