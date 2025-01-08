@@ -2,7 +2,7 @@ import express from "express";
 
 import { postLoginController, postRegisterController, postLogoutController, postChangePasswordController, postVerifyTokenController, postSendAuthEmailController, postResetPasswordController, postAccountVerifiedController } from "../controllers/Auth.js";
 
-import isAuthenticated from "../middlewares/auth.js";
+import isAuthenticated from "../middlewares/Auth.js";
 
 const router = express.Router();
 

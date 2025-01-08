@@ -2,7 +2,7 @@ import express from "express";
 
 import { postGetInvitationIdController, postGetInvitationDataController, postRespondToInviteController, postCommentOnInviteController } from "../controllers/Invite.js";
 
-import isAuthenticated from "../middlewares/auth.js";
+import isAuthenticated from "../middlewares/Auth.js";
 
 const router = express.Router();
 

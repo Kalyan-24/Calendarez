@@ -2,7 +2,7 @@ import express from "express";
 
 import { postAddEventController, postGetEventsController, postEditEventController, postDeleteEventController, postTaskCompleteController, postSearchController } from "../controllers/Event.js";
 
-import isAuthenticated from "../middlewares/auth.js";
+import isAuthenticated from "../middlewares/Auth.js";
 
 const router = express.Router()
 

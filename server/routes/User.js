@@ -2,7 +2,7 @@ import express from "express";
 
 import { postGetHolidaysController, postCreateSettingsController, postEditSettingsController, postGetUserController, postEditProfileController } from "../controllers/User.js";
 
-import isAuthenticated from "../middlewares/auth.js";
+import isAuthenticated from "../middlewares/Auth.js";
 
 const router = express.Router();
 
