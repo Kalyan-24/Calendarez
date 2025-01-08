@@ -31,6 +31,7 @@ const sendEmail = async (to, subject, message) => {
 const scheduleEmail = (id, date, to, subject, message) => {
     try {
         schedule.scheduleJob(id, date, async () => {
+            console.log('email scheduled');
             await sendEmail(to, subject, message)
         })
     } catch (error) {
