@@ -7,10 +7,6 @@
         "includeFiles": ["*"]
       }
     }],
-    "routes": [{
-      "src": "/(.*)",
-      "dest": "server/**/*.js"
-    }],
     "rewrites": [{ 
         "source": "/(.*)", 
         "destination": "server/**/*.js" 
