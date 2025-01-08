@@ -47,7 +47,7 @@ const postAddEventController = async (req, res) => {
                 icon = "🎂"
             }
 
-            scheduleEmail(event._id.toString(), scheduleDate, user.email, 'Event Reminder', `<p>The event "${event.title === '' ? '[Untitled]' : event.title}" is scheduled on ${format(event.date, 'dd MMMM yyyy, EEEE')} at ${event.time}.</p><p><b>Title : </b><span>${icon} ${event.title || "[Untitled]"} ${event.type === "Birthday" && event.title !== "" && "'s Birthday"}</span></p><p><b>Description : </b><span>${event.description === '' ? '[No Description]' : event.description}</span></p><p><b>Date : </b><span>${format(event.date, 'dd MMMM yyyy, EEEE')}</span></p><p><b>Time : </b><span>${event.time}</span></p><p><b>Host : </b><span>${user.username}</span></p><p style="text-align:center;color:#71717a;font-size:12px">Note: This email is to remaind you about the event which is created by you.</p>`)
+            await scheduleEmail(event._id.toString(), scheduleDate, user.email, 'Event Reminder', `<p>The event "${event.title === '' ? '[Untitled]' : event.title}" is scheduled on ${format(event.date, 'dd MMMM yyyy, EEEE')} at ${event.time}.</p><p><b>Title : </b><span>${icon} ${event.title || "[Untitled]"} ${event.type === "Birthday" && event.title !== "" && "'s Birthday"}</span></p><p><b>Description : </b><span>${event.description === '' ? '[No Description]' : event.description}</span></p><p><b>Date : </b><span>${format(event.date, 'dd MMMM yyyy, EEEE')}</span></p><p><b>Time : </b><span>${event.time}</span></p><p><b>Host : </b><span>${user.username}</span></p><p style="text-align:center;color:#71717a;font-size:12px">Note: This email is to remaind you about the event which is created by you.</p>`)
 
             return res.status(200).json({ status: 'Success', message: 'Event added successfully' })
         }
@@ -149,7 +149,7 @@ const postEditEventController = async (req, res) => {
                     icon = "🎂"
                 }
 
-                rescheduleEmail(event._id.toString(), scheduleDate, user.email, 'Event Reminder', `<p>The event "${event.title === '' ? '[Untitled]' : event.title}" is scheduled on ${format(event.date, 'dd MMMM yyyy, EEEE')} at ${event.time}.</p><p><b>Title : </b><span>${icon} ${event.title || "[Untitled]"} ${event.type === "Birthday" && event.title !== "" ? "'s Birthday" : ''}</span></p><p><b>Description : </b><span>${event.description === '' ? '[No Description]' : event.description}</span></p><p><b>Date : </b><span>${format(event.date, 'dd MMMM yyyy, EEEE')}</span></p><p><b>Time : </b><span>${event.time}</span></p><p><b>Host : </b><span>${user.username}</span></p><p style="text-align:center;color:#71717a;font-size:12px">Note: This email is to remaind you about the event which is created by you.</p>`)
+                await rescheduleEmail(event._id.toString(), scheduleDate, user.email, 'Event Reminder', `<p>The event "${event.title === '' ? '[Untitled]' : event.title}" is scheduled on ${format(event.date, 'dd MMMM yyyy, EEEE')} at ${event.time}.</p><p><b>Title : </b><span>${icon} ${event.title || "[Untitled]"} ${event.type === "Birthday" && event.title !== "" ? "'s Birthday" : ''}</span></p><p><b>Description : </b><span>${event.description === '' ? '[No Description]' : event.description}</span></p><p><b>Date : </b><span>${format(event.date, 'dd MMMM yyyy, EEEE')}</span></p><p><b>Time : </b><span>${event.time}</span></p><p><b>Host : </b><span>${user.username}</span></p><p style="text-align:center;color:#71717a;font-size:12px">Note: This email is to remaind you about the event which is created by you.</p>`)
 
 
 
@@ -198,7 +198,7 @@ const postDeleteEventController = async (req, res) => {
 
 
                 }
-                cancelEmail(event._id)
+                await cancelEmail(event._id)
                 return res.status(200).json({ status: 'Success', message: 'Event deleted successfully' })
 
             }

@@ -28,29 +28,28 @@ const sendEmail = async (to, subject, message) => {
     await transporter.sendMail(mailOptions);
 };
 
-const scheduleEmail = (id, date, to, subject, message) => {
+const scheduleEmail = async (id, date, to, subject, message) => {
     try {
-        console.log('email scheduled');
-        schedule.scheduleJob(id, date, async () => {
+        await schedule.scheduleJob(id, date, async () => {
             await sendEmail(to, subject, message)
         })
     } catch (error) {
     }
 };
 
-const rescheduleEmail = (id, date, to, subject, message) => {
+const rescheduleEmail = async (id, date, to, subject, message) => {
     try {
-        schedule.rescheduleJob(id, date, async () => {
+        await schedule.rescheduleJob(id, date, async () => {
             sendEmail(to, subject, message);
         });
     }
     catch (error) {
-        scheduleEmail(id, date, to, subject, message);
+        await scheduleEmail(id, date, to, subject, message);
     }
 };
 
-const cancelEmail = (id) => {
-    schedule.cancelJob(id);
+const cancelEmail = async (id) => {
+    await schedule.cancelJob(id);
 };
 
 export { sendEmail, scheduleEmail, rescheduleEmail, cancelEmail };
