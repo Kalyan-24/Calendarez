@@ -16,6 +16,20 @@ const transporter = nodemailer.createTransport({
 
 const sendEmail = async (to, subject, message) => {
 
+    try {
+        await new Promise((resolve, reject) => {
+            transporter.verify(function (error, success) {
+                if (error) {
+                    reject(error);
+                } else {
+                    resolve(success);
+                }
+            });
+        });
+    } catch (error) {
+
+    }
+
     const mailOptions = {
         from: {
             name: 'Services - Calendarez',
@@ -30,10 +44,8 @@ const sendEmail = async (to, subject, message) => {
         await new Promise((resolve, reject) => {
             transporter.sendMail(mailOptions, (err, info) => {
                 if (err) {
-                    console.error(err);
                     reject(err);
                 } else {
-                    console.log(info);
                     resolve(info);
                 }
             });
